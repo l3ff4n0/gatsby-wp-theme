@@ -6,8 +6,8 @@ const Header = ({isHomePage, children}) => {
         wp: {
         generalSettings: { title },
         },
-        allWpMenu: {
-          edges: [{node: {menuItems}}],
+        allWpMenuItem: {
+          edges: menuItems,
         },
       } = useStaticQuery(graphql`
         query HeaderQuery {
@@ -15,21 +15,24 @@ const Header = ({isHomePage, children}) => {
             generalSettings {
               title
             }
-          }
-          allWpMenu(filter: {locations: {eq: PRIMARY}}) {
+          },
+          allWpMenuItem(filter: {locations: {eq: PRIMARY}, parentDatabaseId: {eq: 0}}) {
             edges {
-                node {
+              node {
                 id
-                menuItems {
-                    nodes {
+                label
+                childItems {
+                  nodes {
                     label
-                    url
                     target
-                    }
+                    url
+                  }
                 }
-                }
+                url
+                target
+              }
             }
-            }
+          }
         }
       `)
       return (
@@ -37,11 +40,22 @@ const Header = ({isHomePage, children}) => {
             <h1 className="main-heading">{title}</h1>
             <nav className="primary-menu">
               <ul className="primary-menu-list">
-                  {menuItems.nodes.map(({label, url, target}) => (
-                      <li className="primary-menu-item" key={url}>
-                      <a href={url} target={target}>{label}</a>
-                      </li>
-                  ))}
+                {menuItems.map(({ node }) => (
+                  <li className="primary-menu-item" key={node.id}>
+                    <a href={node.url} target={node.target}>
+                      {node.label}
+                    </a>
+                    {node.childItems.nodes.map(({ label, url, target }) => (
+                      <ul className="primary-menu-sub-list" key={label}>
+                        <li className="primary-menu-sub-item">
+                          <a href={url} target={target}>
+                            {label}
+                          </a>
+                          </li>
+                      </ul>
+                    ))}
+                  </li>
+                ))}
               </ul>
             </nav>
         </header>

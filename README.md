@@ -4,8 +4,30 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  This is a personal under development with Gatsby JS and WordPress 
 </h1>
+
+## 💻 Local Environment
+
+
+
+## 🔧 Theme plugins dependecies
+
+- [x] WP Gatsby
+- [x] WP GraphQL
+- [ ] ACF fields
+- [ ] WPML/ Polylang
+- [ ] Gravity form
+- [ ] Redux framework
+
+
+
+## 🎯 Structure theme
+
+- [x] Header component
+- [x] Footer component
+- [x] Main component
+- [x] Different template pages as WordPress template hierarchy
 
 ## 🚀 Quick start
 

@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  This is a personal under development with Gatsby JS and WordPress 
+  Project under development with Gatsby JS and WordPress 
 </h1>
 
 ## 💻 Local Environment

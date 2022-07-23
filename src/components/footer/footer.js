@@ -28,15 +28,17 @@ const Footer = ({isHomePage, children}) => {
    return (
         <footer className="footer-section">
             <div className="footer-content">
-              <nav className="footer-menu">
-                <ul className="footer-menu-list">
-                    {menuItems.nodes.map(({label, url, target}) => (
-                        <li className="footer-menu-item" key={url}>
-                        <a href={url} target={target}>{label}</a>
-                        </li>
-                    ))}
-                </ul>
-              </nav>
+              {menuItems.length > 0 && (
+                <nav className="footer-menu">
+                  <ul className="footer-menu-list">
+                      {menuItems.nodes.map(({label, url, target}) => (
+                          <li className="footer-menu-item" key={url}>
+                            <a href={url} target={target}>{label}</a>
+                          </li>
+                      ))}
+                  </ul>
+                </nav>
+              )}
             </div>
              © {new Date().getFullYear()}, Built with
         {` `}

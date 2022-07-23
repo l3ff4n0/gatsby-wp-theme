@@ -8,6 +8,7 @@ import Footer from "../components/footer/footer"
 const DefaultPge = ({ data }) => {
   return (
     <div>
+      BlogPost Single Page
       <Header />
       <Main />
       <Footer />

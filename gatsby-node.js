@@ -25,14 +25,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allWpPage {
         edges {
           node {
+            id
+            uri
             template {
               templateName
             }
             isFrontPage
-            slug
             status
-            title
-            link
           }
         }
       }
@@ -58,7 +57,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     Pages.forEach(page => {
       const tplPage = (page.node.isFrontPage) ? path.resolve("./src/templates/FrontPage.js") : path.resolve("./src/templates/"+ page.node.template.templateName.replace(/\s/g, '') +".js")   
       createPage({
-        path: `/${page.node.slug}`,
+        path: page.node.uri,
         component: tplPage,
         context: {
           id: page.node.id,

@@ -9,16 +9,28 @@
 
 ## 💻 Local Environment
 
-
+- [Local by Flywheel](https://localwp.com/)
 
 ## 🔧 Theme plugins dependecies
 
-- [x] WP Gatsby
-- [x] WP GraphQL
-- [ ] ACF fields
-- [ ] WPML/ Polylang
-- [ ] Gravity form
-- [ ] Redux framework
+- [x] [WP Gatsby](https://wordpress.org/plugins/wp-gatsby/)
+- [x] [WP GraphQL](https://wordpress.org/plugins/wp-graphql/)
+- [ ] [ACF fields](https://it.wordpress.org/plugins/advanced-custom-fields/) and [ACF Pro](https://www.advancedcustomfields.com/pro/) 
+- [ ] [WPGraphQL for Advanced Custom Fields](https://github.com/wp-graphql/wp-graphql-acf)
+- [ ] [WPML](https://wpml.org/)
+- [ ] [WPGraphQL WPML](https://github.com/rburgst/wp-graphql-wpml)
+- [ ] [Polylang](https://it.wordpress.org/plugins/polylang/)
+- [ ] [WPGraphQL Polylang](https://github.com/valu-digital/wp-graphql-polylang)
+- [ ] [Gravity form](https://www.gravityforms.com/)
+- [ ] [WPGraphQL for Gravity Forms](https://github.com/harness-software/wp-graphql-gravity-forms)
+- [ ] [Redux framework](https://redux.io/)
+- [ ] [Yoast Seo](https://it.wordpress.org/plugins/wordpress-seo/)
+- [ ] [WPGraphQL for Yoast SEO](https://github.com/ashhitch/wp-graphql-yoast-seo)
+
+## 🪛 Gatsby plugin
+
+- [x] [gatsby-source-wordpress](https://www.gatsbyjs.com/plugins/gatsby-source-wordpress/)
+- [x] [gatsby-plugin-web-font-loader](https://www.gatsbyjs.com/plugins/gatsby-plugin-web-font-loader/?=gatsby-plugin-web-font-loader)
 
 
 

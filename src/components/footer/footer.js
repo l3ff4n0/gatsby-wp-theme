@@ -4,24 +4,20 @@ import { useStaticQuery, graphql } from "gatsby";
 
 const Footer = ({isHomePage, children}) => {
     const {
-        allWpMenu: {
-          edges: [{node: {menuItems}}],
-        },
+      allWpMenuItem: {
+        edges: menuItems,
+      },
     } = useStaticQuery(graphql`
       query FooterQuery {
-        allWpMenu(filter: {locations: {eq: FOOTER}}) {
-          edges {
+        allWpMenuItem(filter: {locations: {eq: FOOTER}, parentDatabaseId: {eq: 0}}) {
+            edges {
               node {
-              id
-              menuItems {
-                  nodes {
-                  label
-                  url
-                  target
-                  }
+                id
+                label
+                url
+                target
               }
-              }
-          }
+            }
           }
       }
     `)
@@ -31,11 +27,13 @@ const Footer = ({isHomePage, children}) => {
               {menuItems.length > 0 && (
                 <nav className="footer-menu">
                   <ul className="footer-menu-list">
-                      {menuItems.nodes.map(({label, url, target}) => (
-                          <li className="footer-menu-item" key={url}>
-                            <a href={url} target={target}>{label}</a>
-                          </li>
-                      ))}
+                    {menuItems.map(({ node }) => (
+                      <li className="footer-menu-item" key={node.id}>
+                        <a href={node.url} target={node.target}>
+                          {node.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </nav>
               )}

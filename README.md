@@ -11,6 +11,8 @@
 
 - [Local by Flywheel](https://localwp.com/)
 
+- [WordPress theme as reference](https://github.com/l3ff4n0/gatsby-theme)
+
 ## 🔧 Theme plugins dependecies
 
 - [x] [WP Gatsby](https://wordpress.org/plugins/wp-gatsby/)

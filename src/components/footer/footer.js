@@ -4,11 +4,21 @@ import { useStaticQuery, graphql } from "gatsby";
 
 const Footer = ({isHomePage, children}) => {
     const {
+      wp: {
+        general: {
+          phoneNumber
+        }
+      },
       allWpMenuItem: {
         edges: menuItems,
       },
     } = useStaticQuery(graphql`
       query FooterQuery {
+        wp {
+          general {
+            phoneNumber
+          }
+        },
         allWpMenuItem(filter: {locations: {eq: FOOTER}, parentDatabaseId: {eq: 0}}) {
             edges {
               node {
@@ -42,7 +52,7 @@ const Footer = ({isHomePage, children}) => {
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
         {` `}
-        And <a href="https://wordpress.org/">WordPress</a>
+        And <a href="https://wordpress.org/">WordPress {phoneNumber}</a>
       </footer>
         )
 }

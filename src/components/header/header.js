@@ -4,6 +4,13 @@ import { useStaticQuery, graphql } from "gatsby";
 const Header = ({isHomePage, children}) => {
     const {
         wp: {
+            general: {
+              logo: {
+                mediaItemUrl,
+                width,
+                height
+              }
+            },
         generalSettings: { title },
         },
         allWpMenuItem: {
@@ -12,6 +19,13 @@ const Header = ({isHomePage, children}) => {
       } = useStaticQuery(graphql`
         query HeaderQuery {
           wp {
+            general {
+              logo {
+                mediaItemUrl
+                width
+                height
+              }
+            },
             generalSettings {
               title
             }
@@ -38,6 +52,7 @@ const Header = ({isHomePage, children}) => {
       return (
         <header className="global-heading">
             {title.length > 0 && <h1 className="main-heading">{title}</h1>}
+            {mediaItemUrl.length > 0 && <img className="logo" src={mediaItemUrl} alt={title} width={width} height={height} />}
             {menuItems.length > 0 && (
               <nav className="primary-menu">
                 <ul className="primary-menu-list">

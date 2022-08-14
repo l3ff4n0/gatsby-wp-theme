@@ -26,6 +26,7 @@
 - [ ] [Gravity form](https://www.gravityforms.com/)
 - [ ] [WPGraphQL for Gravity Forms](https://github.com/harness-software/wp-graphql-gravity-forms)
 - [ ] [Redux framework](https://redux.io/)
+- [ ] [WPGraphQL Redux framework](https://github.com/l3ff4n0/wp-graphql-redux-framework) developed from myself and compatibility also with WP Gatsby
 - [ ] [Yoast Seo](https://it.wordpress.org/plugins/wordpress-seo/)
 - [ ] [WPGraphQL for Yoast SEO](https://github.com/ashhitch/wp-graphql-yoast-seo)
 
@@ -42,6 +43,7 @@
 - [x] Footer component
 - [x] Main component
 - [x] Different template pages as WordPress template hierarchy
+- [x] Get data from Redux Framework plugin (on progress)
 
 ## 🚀 Quick start
 
